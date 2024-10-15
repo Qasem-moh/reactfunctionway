@@ -3,7 +3,8 @@ import React from 'react'
 const About = (props) => {
   return (
     <div>
-      <p>{props.game} {props.desc}</p>
+      <h1>{props.title} </h1>
+      <h4>{props.desc}</h4>
     </div>
   )
 }
