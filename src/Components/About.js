@@ -1,29 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const About = (props) => {
+  const [moh, setMoh] = useState('Hello')
+  const toggle=()=>{
+    setMoh((prev)=>(prev==="Qasem"?"hello":"Qasem"))
+  }
   return (
     <div style={{
       width: "350px ",
 
-    }}>
+    }}><span>{moh}</span>
       <div style={{
         width: "350px ",
         backgroundImage: `url(${props.image})`,
         height: "350px",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition:"center",
-        borderRadius:"12px"
+        backgroundPosition: "center",
+        borderRadius: "12px"
 
-      }}></div>
+      }} onClick={()=>toggle()}></div>
 
 
       {/* <img src={props.image} alt='i' style={{ width: "450px" }} /> */}
-      <div style={{ 
+      <div style={{
         // display: "flex",
-         alignItems: "center",
-          justifyContent: "space-between",
-           marginBottom: "0px" }}>
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginBottom: "0px"
+      }}>
         <h1>{props.name} </h1>
         <h5>⭐{props.review} </h5>
 
