@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 const About = (props) => {
   const [moh, setMoh] = useState(true)
   const toggle=()=>{
@@ -10,7 +9,8 @@ const About = (props) => {
     <div style={{
       width: "350px ",
 
-    }}><span>{moh?"Qasem":"Moh"}</span>
+    }}>
+      {/* <span>{moh?"red":"black"}</span> */}
       <div style={{
         width: "350px ",
         backgroundImage: `url(${props.image})`,
@@ -31,7 +31,8 @@ const About = (props) => {
         marginBottom: "0px"
       }}>
         <h1>{props.name} </h1>
-        <h5>⭐{props.review} </h5>
+        <h5>
+<i class="fa-solid fa-star" style={{color:moh?"red":"black"}}></i>{props.review} </h5>
 
       </div>
       <h4 style={{ marginTop: "0px" }}>{props.price} $</h4>
