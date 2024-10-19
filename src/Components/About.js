@@ -25,7 +25,7 @@ const About = (props) => {
           justifyContent: "space-between",
            marginBottom: "0px" }}>
         <h1>{props.name} </h1>
-        <h5>{props.review} </h5>
+        <h5>⭐{props.review} </h5>
 
       </div>
       <h4 style={{ marginTop: "0px" }}>{props.price} $</h4>
