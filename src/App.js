@@ -1,22 +1,31 @@
 
-import './App.css';
+// import './App.css';
 import About from './Components/About';
 import { data } from './data';
 function App() {
 
-  const showData=data.map((el)=>
-  <About
-  key={el.id}
-   name={el.name} 
-  image={el.image}
-  price={el.price}
-descraption={el.description}
-  />)
+  const showData = data.map((el) =>
+    <About
+      key={el.id}
+      name={el.name}
+      image={el.image}
+      price={el.price}
+      review={el.review}
+      descraption={el.description}
+    />)
   return (
-    <div className="App">
-    {showData}
-  
- 
+    <div className="App" 
+    style={{
+      marginTop:"20px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap:"20px",
+      flexWrap:"wrap"
+    }}>
+      {showData}
+
+
     </div>
   );
 }
