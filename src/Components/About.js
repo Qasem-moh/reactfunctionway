@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 
 const About = (props) => {
-  const [moh, setMoh] = useState('Hello')
+  const [moh, setMoh] = useState(true)
   const toggle=()=>{
-    setMoh((prev)=>(prev==="Qasem"?"hello":"Qasem"))
+    // setMoh((prev)=>(prev==="Qasem"?"hello":"Qasem"))
+    setMoh((prev)=>(!prev))
   }
   return (
     <div style={{
       width: "350px ",
 
-    }}><span>{moh}</span>
+    }}><span>{moh?"Qasem":"Moh"}</span>
       <div style={{
         width: "350px ",
         backgroundImage: `url(${props.image})`,
