@@ -1,6 +1,7 @@
 
 // import './App.css';
 import About from './Components/About';
+import Form from './Components/Form';
 import { data } from './data';
 function App() {
 
@@ -23,8 +24,8 @@ function App() {
       gap:"20px",
       flexWrap:"wrap"
     }}>
-      {showData}
-
+      {/* {showData} */}
+<Form/>
 
     </div>
   );
