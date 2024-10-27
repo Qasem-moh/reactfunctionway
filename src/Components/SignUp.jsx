@@ -7,23 +7,29 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [passwordR, setPasswordR] = useState("");
   const [accept,setAccept]=useState(false)
-  // const [flag,setFlag]=useState(false)
-  function submit(e){
+  const [emailError,setEmailError]=useState("")
+  async function submit(e){
     let flag=true
     e.preventDefault();
     setAccept(true)
     if(name===""||password.length<8||passwordR!==password){
         flag=false
     }else flag=true
-    if(flag){
+    try {
+      if(flag){
         //send data
-     let res= axios.post('http://127.0.0.1:8000/api/register',{
+     let res=await axios.post('http://127.0.0.1:8000/api/register',{
             name:name,
             email:email,
             password:password,
             password_confirmation:passwordR
         }).then((t)=>console.log(t))
         
+    }
+    } catch (error) {
+      console.log(error.response.status);
+      
+      setEmailError(error.response.status)
     }
   }
   return (
@@ -47,6 +53,7 @@ function SignUp() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {accept&&emailError===422&&<p>the email already has been taken</p>}
 
         <label htmlFor="password"> password: </label>
         <input
