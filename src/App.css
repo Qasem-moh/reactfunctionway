@@ -10,9 +10,32 @@
   justify-content: center;
   align-items: center;
   justify-items: center;
+  border: 1px solid;
+  box-shadow: 14px 21px 138px -21px rgb(230, 190, 190);
+  -webkit-box-shadow: 14px 21px 138px -21px rgba(191,39,39,1);
+  -moz-box-shadow: 14px 21px 138px -21px rgba(191,39,39,1);
 }
 .father form{
   display: flex;
+  width: 450px;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  align-items: center;
+  box-shadow: 14px 21px 138px -21px rgb(229, 192, 192);
+-webkit-box-shadow: 14px 21px 138px -21px rgb(211, 184, 184);
+-moz-box-shadow: 14px 21px 138px -21px rgb(224, 172, 172);
+background-color: aliceblue;
+}
+.father form input{
+  width: 250px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.father form button{
+  /* color: aqua; */
+  height: 35px;
+background-color: blue;
 }
