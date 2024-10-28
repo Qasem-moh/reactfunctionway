@@ -23,8 +23,11 @@ function SignUp() {
             email:email,
             password:password,
             password_confirmation:passwordR
-        }).then((t)=>console.log(t))
-        
+        });
+        if(res.status==200){
+          window.localStorage.setItem("email",email)
+          window.location.pathname="/"
+        }
     }
     } catch (error) {
       console.log(error.response.status);

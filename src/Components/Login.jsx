@@ -1,27 +1,66 @@
-
+import React, { useState } from "react";
+import "../App.css";
+import axios from "axios";
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [accept, setAccept] = useState(false);
+    const [emailError, setEmailError] = useState("");
+    async function submit(e) {
+        let flag = true;
+        e.preventDefault();
+        setAccept(true);
+        if (password.length < 8) {
+            flag = false;
+        } else flag = true;
+        try {
+            if (flag) {
+                //send data
+                let res = await axios.post("http://127.0.0.1:8000/api/login", {
+                    email: email,
+                    password: password,
+                });
+                if (res.status === 200) {
+                    window.localStorage.setItem("email", email);
+                    window.location.pathname = "/";
+                }
+            }
+        } catch (error) {
+            console.log(error.response.status);
+
+            setEmailError(error.response.status);
+        }
+    }
     return (
         <div class="container2">
             <div class="screen">
                 <div class="screen__content">
-                    <form class="login">
-                        <div class="login__field">
-                            <i class="login__icon fas fa-user"></i>
+                    <form onSubmit={submit} class="login">
+                        <div className="login__field">
+                            <i className=" login__icon fa-solid fa-envelope"></i>
                             <input
-                                type="text"
-                                class="login__input"
-                                placeholder="User name / Email"
+                                type="email"
+                                className="login__input"
+                                placeholder="Email"
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-                        <div class="login__field">
-                            <i class="login__icon fas fa-lock"></i>
+                        <div className="login__field">
+                            <i className="login__icon fas fa-lock"></i>
                             <input
                                 type="password"
-                                class="login__input"
+                                className="login__input"
                                 placeholder="Password"
+                                required
+                                onChange={(e) => setPassword(e.target.value)}
                             />
+                            {password.length < 8 && accept && (
+                                <p className="error">password most be more than 8</p>
+                            )}
                         </div>
-                        <button class="button login__submit">
+                        <button type="submit" class="button login__submit">
                             <span class="button__text">Log In Now</span>
                             <i class="button__icon fas fa-chevron-right"></i>
                         </button>
