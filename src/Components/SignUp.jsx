@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import axios from "axios";
+import Header from "./Header";
 function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ function SignUp() {
             password:password,
             password_confirmation:passwordR
         });
-        if(res.status==200){
+        if(res.status===200){
           window.localStorage.setItem("email",email)
           window.location.pathname="/"
         }
@@ -36,6 +37,8 @@ function SignUp() {
     }
   }
   return (
+    <div>
+      <Header/>
     <div className="container2">
       <div className="screen">
         <div className="screen__content">
@@ -113,6 +116,7 @@ function SignUp() {
           <span className="screen__background__shape screen__background__shape1"></span>
         </div>
       </div>
+    </div>
     </div>
   );
 }

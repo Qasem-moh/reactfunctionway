@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import axios from "axios";
+import Header from "./Header";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -32,6 +33,8 @@ const Login = () => {
         }
     }
     return (
+        <div>
+            <Header/>
         <div class="container2">
             <div class="screen">
                 <div class="screen__content">
@@ -81,6 +84,7 @@ const Login = () => {
                     <span class="screen__background__shape screen__background__shape1"></span>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
