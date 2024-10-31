@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TopBar = () => {
   return (
@@ -6,7 +7,7 @@ const TopBar = () => {
       <h1>test</h1>
       <div className="but">
             <h6 className="bb">
-              logout <i class="fa-solid fa-right-from-bracket"></i>
+           <Link to="/" >Go to home <i class="fa-solid fa-right-from-bracket"></i></Link> 
             </h6>
           </div>
     </div>

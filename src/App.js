@@ -5,7 +5,7 @@ import About from "./Components/About";
 import { data } from './data';
 import Dashboard from "./Components/Dashboard";
 import Users from "./Components/Users";
-
+import Header from "./Components/Header";
 function App() {
   const showData = data.map((el) =>
     <About
@@ -19,14 +19,15 @@ function App() {
   return (
     <div className="App" >
       <Routes>
-        <Route path="/" element={<div style={{
+        {/* <Route path="/" element={ <div style={{
           marginTop: "20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           gap: "20px",
           flexWrap: "wrap"
-        }}>{showData}</div>} />
+        }}>>{showData}</div>} /> */}
+        <Route path="/" element={ <Header/>} />
         <Route path="register" element={<SignUp />} />
         <Route path="login" element={<Login />} />
         <Route path="dashboard" element={<Dashboard />}>
