@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Header from './Header'
 const About = (props) => {
   const [moh, setMoh] = useState(true)
   const toggle=()=>{
@@ -6,6 +7,8 @@ const About = (props) => {
     setMoh((prev)=>(!prev))
   }
   return (
+    <div>
+   
     <div style={{
       width: "350px ",
 
@@ -32,11 +35,12 @@ const About = (props) => {
       }}>
         <h1>{props.name} </h1>
         <h5>
-<i class="fa-solid fa-star" style={{color:moh?"red":"black"}}></i>{props.review} </h5>
+<i className="fa-solid fa-star" style={{color:moh?"red":"black"}}></i>{props.review} </h5>
 
       </div>
       <h4 style={{ marginTop: "0px" }}>{props.price} $</h4>
       <p style={{ color: "gray", marginTop: "0px" }}>{props.descraption}</p>
+    </div>
     </div>
   )
 }
