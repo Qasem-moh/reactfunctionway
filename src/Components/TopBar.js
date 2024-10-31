@@ -7,7 +7,7 @@ const TopBar = () => {
       <h1>test</h1>
       <div className="but">
             <h6 className="bb">
-           <Link to="/" >Go to home <i class="fa-solid fa-right-from-bracket"></i></Link> 
+           <Link to="/" >Go to home <i className="fa-solid fa-right-from-bracket"></i></Link> 
             </h6>
           </div>
     </div>

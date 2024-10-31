@@ -6,6 +6,7 @@ import { data } from './data';
 import Dashboard from "./Components/Dashboard";
 import Users from "./Components/Users";
 import Header from "./Components/Header";
+import UpdateUser from "./Components/UpdateUser";
 function App() {
   const showData = data.map((el) =>
     <About
@@ -32,6 +33,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="dashboard" element={<Dashboard />}>
           <Route path="users" element={<Users />} />
+          <Route path="users/:id" element={<UpdateUser />} />
         </Route>
       </Routes>
 

@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import axios from "axios";
-import Header from "./Header";
-function SignUp() {
+function UpdateUser() {
+    const id=window.location.pathname.split('/').slice(-1)[0]
+    console.log(id)
+    useEffect(() => {
+        fetch(`http://127.0.0.1:8000/api/user/showbyid/${id}`)
+            .then((res) => res.json())
+            .then((data) => console.log(data))
+
+    }, []);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,7 +45,7 @@ function SignUp() {
   }
   return (
     <div>
-      <Header />
+     
       <div className="container2">
         <div className="screen">
           <div className="screen__content">
@@ -98,7 +105,7 @@ function SignUp() {
               </div>
               {/* <button type="submit">Register</button> */}
               <button type="submit" className="button login__submit">
-                <span className="button__text">Register In Now</span>
+                <span className="button__text">Update</span>
                 <i className="button__icon fas fa-chevron-right"></i>
               </button>
             </form>
@@ -123,4 +130,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default UpdateUser;
